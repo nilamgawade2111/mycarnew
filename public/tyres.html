@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of quality tyres from top brands. Find the perfect tyres for your vehicle by category and brand. Expert tyre advice and maintenance tips.">
+    <title>Tyres | MyCar - Quality Tyres from Top Brands</title>
+    <link rel="stylesheet" href="tyres.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="MyCar Home">
+                <span class="logo-text">MyCar</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="tyres.html" class="nav-link active" aria-current="page">Tyres</a></li>
+                <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Tyres</h1>
+                <p class="hero-subtitle">Find the perfect tyres for your vehicle from our extensive range of premium brands. Whether you need all-season reliability, high-performance grip, or winter safety, we have the right tyres for every driving condition.</p>
+            </div>
+        </section>
+
+        <!-- Search and Filter Interface -->
+        <section class="filter-section" aria-labelledby="filter-title">
+            <div class="container">
+                <h2 id="filter-title" class="visually-hidden">Filter Tyres</h2>
+                <div class="filter-controls" role="search" aria-label="Filter tyres by category and brand">
+                    <div class="filter-group">
+                        <label for="category-filter" class="filter-label">Category</label>
+                        <select id="category-filter" class="filter-select" aria-describedby="category-desc">
+                            <option value="all">All Categories</option>
+                            <option value="all-season">All-Season</option>
+                            <option value="performance">Performance</option>
+                            <option value="winter">Winter</option>
+                            <option value="suv-4x4">SUV/4x4</option>
+                            <option value="economy">Economy</option>
+                        </select>
+                        <span id="category-desc" class="visually-hidden">Select a tyre category to filter results</span>
+                    </div>
+                    <div class="filter-group">
+                        <label for="brand-filter" class="filter-label">Brand</label>
+                        <select id="brand-filter" class="filter-select" aria-describedby="brand-desc">
+                            <option value="all">All Brands</option>
+                            <option value="michelin">Michelin</option>
+                            <option value="bridgestone">Bridgestone</option>
+                            <option value="goodyear">Goodyear</option>
+                            <option value="continental">Continental</option>
+                            <option value="pirelli">Pirelli</option>
+                            <option value="dunlop">Dunlop</option>
+                        </select>
+                        <span id="brand-desc" class="visually-hidden">Select a tyre brand to filter results</span>
+                    </div>
+                    <button type="button" id="reset-filters" class="btn btn-secondary" aria-label="Reset all filters">
+                        Reset Filters
+                    </button>
+                </div>
+                <div id="filter-status" class="filter-status" aria-live="polite" aria-atomic="true"></div>
+            </div>
+        </section>
+
+        <!-- Tyre Categories Section -->
+        <section class="categories-section" aria-labelledby="categories-title">
+            <div class="container">
+                <h2 id="categories-title">Tyre Categories</h2>
+                <p class="section-intro">Choose the right type of tyre for your driving needs. Each category is designed for specific conditions and performance requirements.</p>
+                <div class="categories-grid" id="categories-grid">
+                    <article class="category-card" data-category="all-season">
+                        <div class="category-icon" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4"/>
+                                <circle cx="32" cy="32" r="12" fill="currentColor"/>
+                                <path d="M32 8v8M32 48v8M8 32h8M48 32h8M14 14l6 6M44 44l6 6M14 50l6-6M44 20l6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>All-Season</h3>
+                        <p>Versatile tyres designed to perform well in various weather conditions including dry, wet, and light snow. Perfect for drivers seeking year-round convenience without seasonal tyre changes.</p>
+                        <ul class="category-features">
+                            <li>Year-round versatility</li>
+                            <li>Balanced performance</li>
+                            <li>Long tread life</li>
+                        </ul>
+                    </article>
+
+                    <article class="category-card" data-category="performance">
+                        <div class="category-icon" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4"/>
+                                <polygon points="32,12 38,28 56,28 42,38 48,56 32,44 16,56 22,38 8,28 26,28" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Performance</h3>
+                        <p>High-performance tyres engineered for superior handling, grip, and responsiveness. Ideal for sports cars, performance vehicles, and enthusiasts who demand the best driving experience.</p>
+                        <ul class="category-features">
+                            <li>Enhanced grip and traction</li>
+                            <li>Precise handling</li>
+                            <li>High-speed stability</li>
+                        </ul>
+                    </article>
+
+                    <article class="category-card" data-category="winter">
+                        <div class="category-icon" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M32 4v56M4 32h56M12 12l40 40M52 12l-40 40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                                <circle cx="32" cy="12" r="3" fill="currentColor"/>
+                                <circle cx="32" cy="52" r="3" fill="currentColor"/>
+                                <circle cx="12" cy="32" r="3" fill="currentColor"/>
+                                <circle cx="52" cy="32" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Winter</h3>
+                        <p>Specially designed for cold weather, snow, and ice. Winter tyres feature unique rubber compounds and tread patterns that remain flexible in freezing temperatures for maximum safety.</p>
+                        <ul class="category-features">
+                            <li>Cold weather performance</li>
+                            <li>Snow and ice traction</li>
+                            <li>Shorter braking distances</li>
+                        </ul>
+                    </article>
+
+                    <article class="category-card" data-category="suv-4x4">
+                        <div class="category-icon" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <rect x="8" y="24" width="48" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <circle cx="18" cy="44" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <circle cx="46" cy="44" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <path d="M12 24l6-10h28l6 10" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <line x1="24" y1="14" x2="24" y2="24" stroke="currentColor" stroke-width="2"/>
+                                <line x1="40" y1="14" x2="40" y2="24" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>SUV/4x4</h3>
+                        <p>Built for SUVs, trucks, and 4x4 vehicles. These tyres offer enhanced durability, load capacity, and off-road capability while maintaining comfortable on-road performance.</p>
+                        <ul class="category-features">
+                            <li>Heavy-duty construction</li>
+                            <li>Off-road capability</li>
+                            <li>Higher load ratings</li>
+                        </ul>
+                    </article>
+
+                    <article class="category-card" data-category="economy">
+                        <div class="category-icon" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4"/>
+                                <text x="32" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="currentColor">$</text>
+                            </svg>
+                        </div>
+                        <h3>Economy</h3>
+                        <p>Cost-effective tyres that deliver reliable performance and good value. Perfect for daily commuting and budget-conscious drivers who need dependable tyres without premium pricing.</p>
+                        <ul class="category-features">
+                            <li>Affordable pricing</li>
+                            <li>Fuel efficient</li>
+                            <li>Reliable performance</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Tyre Brands Section -->
+        <section class="brands-section" aria-labelledby="brands-title">
+            <div class="container">
+                <h2 id="brands-title">Popular Tyre Brands</h2>
+                <p class="section-intro">We partner with the world's leading tyre manufacturers to bring you quality, performance, and reliability you can trust.</p>
+                <div class="brands-grid" id="brands-grid">
+                    <article class="brand-card" data-brand="michelin">
+                        <div class="brand-logo" aria-hidden="true">
+                            <div class="brand-logo-placeholder">Michelin</div>
+                        </div>
+                        <h3>Michelin</h3>
+                        <p>French tyre giant renowned for innovation and longevity. Michelin tyres deliver exceptional performance, safety, and fuel efficiency across all vehicle types and driving conditions.</p>
+                        <span class="brand-tag">Premium Quality</span>
+                    </article>
+
+                    <article class="brand-card" data-brand="bridgestone">
+                        <div class="brand-logo" aria-hidden="true">
+                            <div class="brand-logo-placeholder">Bridgestone</div>
+                        </div>
+                        <h3>Bridgestone</h3>
+                        <p>World's largest tyre manufacturer, offering cutting-edge technology and superior quality. Bridgestone tyres are trusted by Formula 1 teams and everyday drivers alike.</p>
+                        <span class="brand-tag">Global Leader</span>
+                    </article>
+
+                    <article class="brand-card" data-brand="goodyear">
+                        <div class="brand-logo" aria-hidden="true">
+                            <div class="brand-logo-placeholder">Goodyear</div>
+                        </div>
+                        <h3>Goodyear</h3>
+                        <p>American icon with over 120 years of tyre innovation. Goodyear combines advanced technology with reliable performance, making them a top choice for drivers worldwide.</p>
+                        <span class="brand-tag">Trusted Heritage</span>
+                    </article>
+
+                    <article class="brand-card" data-brand="continental">
+                        <div class="brand-logo" aria-hidden="true">
+                            <div class="brand-logo-placeholder">Continental</div>
+                        </div>
+                        <h3>Continental</h3>
+                        <p>German engineering excellence in every tyre. Continental is known for outstanding wet and dry handling, advanced safety features, and impressive braking performance.</p>
+                        <span class="brand-tag">German Engineering</span>
+                    </article>
+
+                    <article class="brand-card" data-brand="pirelli">
+                        <div class="brand-logo" aria-hidden="true">
+                            <div class="brand-logo-placeholder">Pirelli</div>
+                        </div>
+                        <h3>Pirelli</h3>
+                        <p>Italian prestige and performance since 1872. Pirelli is the exclusive tyre supplier to Formula 1 and produces premium tyres for luxury and high-performance vehicles.</p>
+                        <span class="brand-tag">Performance Excellence</span>
+                    </article>
+
+                    <article class="brand-card" data-brand="dunlop">
+                        <div class="brand-logo" aria-hidden="true">
+                            <div class="brand-logo-placeholder">Dunlop</div>
+                        </div>
+                        <h3>Dunlop</h3>
+                        <p>Pioneering tyre manufacturer with a rich motorsport heritage. Dunlop offers a comprehensive range of tyres combining innovation, performance, and value for all drivers.</p>
+                        <span class="brand-tag">Motorsport Heritage</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="no-results" hidden>
+            <div class="container">
+                <div class="no-results-content">
+                    <svg class="no-results-icon" viewBox="0 0 64 64" aria-hidden="true">
+                        <circle cx="28" cy="28" r="20" fill="none" stroke="currentColor" stroke-width="4"/>
+                        <line x1="42" y1="42" x2="56" y2="56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="20" y1="28" x2="36" y2="28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h3>No matching tyres found</h3>
+                    <p>Try adjusting your filters or <button type="button" class="link-button" id="clear-filters-link">clear all filters</button> to see all available options.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tyre Features and Benefits Section -->
+        <section class="features-section" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title">Tyre Features and Benefits</h2>
+                <p class="section-intro">Quality tyres make all the difference in your driving experience. Here's what you can expect from our premium tyre selection.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="currentColor">
+                                <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"/>
+                                <path d="M24 14v10l8 4"/>
+                            </svg>
+                        </div>
+                        <h3>Improved Grip</h3>
+                        <p>Advanced tread compounds and patterns provide superior traction on wet and dry surfaces, giving you confidence in every turn and stop.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="currentColor">
+                                <path d="M24 4l-8 16h6v20h4V20h6L24 4z"/>
+                                <rect x="8" y="40" width="32" height="4" rx="2"/>
+                            </svg>
+                        </div>
+                        <h3>Fuel Efficiency</h3>
+                        <p>Low rolling resistance technology reduces fuel consumption, saving you money at the pump while reducing your carbon footprint.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="currentColor">
+                                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <path d="M24 12v12l8 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Longer Lifespan</h3>
+                        <p>Durable construction and even wear patterns mean your tyres last longer, providing better value and fewer replacements over time.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="currentColor">
+                                <path d="M8 24c0-8.84 7.16-16 16-16v4c-6.63 0-12 5.37-12 12s5.37 12 12 12 12-5.37 12-12h4c0 8.84-7.16 16-16 16s-16-7.16-16-16z"/>
+                                <circle cx="24" cy="24" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Quieter Ride</h3>
+                        <p>Optimised tread designs minimize road noise, creating a more peaceful and comfortable cabin environment for you and your passengers.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="currentColor">
+                                <circle cx="24" cy="24" r="8" fill="currentColor"/>
+                                <path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M10 38l6-6M32 16l6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>All-Weather Performance</h3>
+                        <p>Engineered to perform in rain, shine, or light snow. Modern tyres adapt to changing conditions to keep you safe year-round.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tyre Maintenance Tips Section -->
+        <section class="tips-section" aria-labelledby="tips-title">
+            <div class="container">
+                <h2 id="tips-title">Tyre Maintenance Tips</h2>
+                <p class="section-intro">Proper tyre maintenance extends tyre life, improves safety, and saves money. Follow these expert tips to get the most from your tyres.</p>
+                <div class="tips-grid">
+                    <article class="tip-card">
+                        <div class="tip-number" aria-hidden="true">1</div>
+                        <h3>Regular Pressure Checks</h3>
+                        <p>Check your tyre pressure at least once a month and before long trips. Under-inflated tyres wear faster, reduce fuel economy, and can be dangerous. Find the correct pressure on your door jamb sticker or owner's manual.</p>
+                        <div class="tip-highlight">
+                            <strong>Pro tip:</strong> Check pressure when tyres are cold for accurate readings.
+                        </div>
+                    </article>
+
+                    <article class="tip-card">
+                        <div class="tip-number" aria-hidden="true">2</div>
+                        <h3>Rotation Schedule</h3>
+                        <p>Rotate your tyres every 8,000 to 12,000 kilometres to ensure even wear. Front tyres typically wear faster due to steering and braking forces. Regular rotation extends overall tyre life significantly.</p>
+                        <div class="tip-highlight">
+                            <strong>Pro tip:</strong> Rotate tyres during your regular oil change service.
+                        </div>
+                    </article>
+
+                    <article class="tip-card">
+                        <div class="tip-number" aria-hidden="true">3</div>
+                        <h3>Tread Depth Monitoring</h3>
+                        <p>Check tread depth regularly using the built-in wear indicators or a tread depth gauge. Minimum legal depth is 1.5mm, but we recommend replacing tyres at 3mm for optimal safety, especially in wet conditions.</p>
+                        <div class="tip-highlight">
+                            <strong>Pro tip:</strong> Use the 20-cent coin test - if you can see the platypus's bill, it's time for new tyres.
+                        </div>
+                    </article>
+
+                    <article class="tip-card">
+                        <div class="tip-number" aria-hidden="true">4</div>
+                        <h3>Alignment Checks</h3>
+                        <p>Have your wheel alignment checked annually or if you notice uneven wear, pulling, or vibration. Proper alignment prevents premature wear and ensures your vehicle handles safely and predictably.</p>
+                        <div class="tip-highlight">
+                            <strong>Pro tip:</strong> Get alignment checked after hitting significant potholes or kerbs.
+                        </div>
+                    </article>
+
+                    <article class="tip-card">
+                        <div class="tip-number" aria-hidden="true">5</div>
+                        <h3>Storage Tips</h3>
+                        <p>When storing seasonal tyres, keep them in a cool, dry place away from direct sunlight and ozone sources like electric motors. Store them flat or hanging, and consider tyre bags to prevent degradation.</p>
+                        <div class="tip-highlight">
+                            <strong>Pro tip:</strong> Mark tyres with their position before removal for easy reinstallation.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Ready to Find Your Perfect Tyres?</h2>
+                <p>Our expert team is here to help you choose the right tyres for your vehicle and driving needs. Get in touch today for personalised advice and competitive pricing.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="tel:1300000000" class="btn btn-secondary">Call 1300 000 000</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">MyCar</span>
+                    <p>Your trusted partner for quality tyres and automotive services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tyres.html">Tyres</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>123 Automotive Street<br>Melbourne, VIC 3000</p>
+                    <p><a href="tel:1300000000">1300 000 000</a></p>
+                    <p><a href="mailto:info@mycar.com.au">info@mycar.com.au</a></p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday: 8am - 6pm<br>Saturday: 8am - 4pm<br>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MyCar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="tyres.js"></script>
+</body>
+</html>
